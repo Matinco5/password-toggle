@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password-toggle</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+            font-family: cursive;
+            background: #000080;
+        }
+
+        .container{
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .input-box{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 300px;
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 10px;
+        }
+
+        input{
+            outline: 0;
+            border: none;
+            font-size: 24px;
+        }
+
+        .input-box img{
+            width: 35px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="input-box">
+            <input type="password" placeholder="enter your password" id="password">
+            <img src="images/hide password.png" alt="hide-password" id="password-icon">
+        </div>
+    </div> 
+    
+    <script>
+        let password = document.querySelector("#password");
+        let passwordIcon = document.querySelector("#password-icon")
+
+        passwordIcon.addEventListener("click", function(){
+            if(password.type == "password"){
+                password.type = "text"
+                passwordIcon.src = "show password.png"
+            }
+            else{
+                password.type = "password"
+                passwordIcon.src = "hide password.png"
+            }
+        })
+    </script>
+</body>
+</html>
